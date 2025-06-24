@@ -1,6 +1,8 @@
-let myName = 'Bob';
+alert('Hello world');
+
+let myName = 'Broccoli';
 document.write(myName);
-myName = 'John Doe';
+myName = 'Watermelon';
 document.write(myName);
 
 let simpleAddition = 6 + 2;
