@@ -11,18 +11,12 @@ for (let i = 0; i < pokemonList.length; i++){
         document.write(" - This is big");    
         }
         document.write("<br>");           
+        }
 
 
 
 
-let myArray = [1,2,3,4,5,6,7,8,9,10,11,12];
-
-for (let i = 0; i < myArray.length; i++) {
-    console.log(myArray[i]);
-
-
-
-
-
-
-
+function myLoopFunction(user) {
+    console.log(user.name + " is " + user.height + " meters tall and " + user.type);
+    }
+    userList.forEach(myLoopFunction);
