@@ -16,7 +16,7 @@ for (let i = 0; i < pokemonList.length; i++){
 
 
 
-function myLoopFunction(user) {
-    console.log(user.name + " is " + user.height + " meters tall and " + user.type);
+function myLoopFunction(pokemon) {
+    console.log(pokemon.name + " is " + pokemon.height + " meters tall and " + pokemon.type);
     }
-    userList.forEach(myLoopFunction);
+    pokemonList.forEach(myLoopFunction);
