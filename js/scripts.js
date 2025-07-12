@@ -20,18 +20,10 @@ let pokemonRepository = (function () {
 
 
 
-for (let i = 0; i < pokemonList.length; i++){
-    document.write(pokemonList[i].name + " " + (pokemonList[i].height));
-    if (pokemonList[i].height >2 ) {
-        document.write(" - This is big");    
-        }
-        document.write("<br>");           
-        }
-
-
-
-
 function myLoopFunction(pokemon) {
     console.log(pokemon.name + " is " + pokemon.height + " meters tall and " + pokemon.type);
     }
     pokemonRepository.getAll().forEach(myLoopFunction);
+
+
+    
