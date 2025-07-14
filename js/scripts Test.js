@@ -115,3 +115,5 @@ printArrayDetails (pokemonList2);
 // }
 
 // console.log(text);
+
+

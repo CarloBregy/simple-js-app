@@ -1,29 +1,62 @@
 let pokemonRepository = (function () {
-    
-  let pokemonList = [
-   { name: "Bulbasaur", height: 0.7, type: ["grass", "poison"] },
-   { name: "Ivysaur", height: 1, type: ["grass", "poison"] },
-   { name: "Venusaur", height: 2.2, type: ["grass", "poison"] },
-   { name: "Charmander", height: 0.6, type: ["fire", "dragon"] }
-   ];
+  let repository = [
+    {
+      name: "Bulbasaur",
+      height: 0.7,
+      types: ["grass", "poison"],
+    },
+    {
+      name: "Charizard",
+      height: 1.7,
+      types: ["fire", "flying"],
+    },
+    {
+      name: "Squirtle",
+      height: 1,
+      types: ["water"],
+    },
+     {
+      name: "Charmander",
+      height: 0.6,
+      types: ["fire", "dragon"],
+    },
+  ];
 
-  function getAll() {
-    return pokemonList;
+ function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      repository.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
   }
-
+  function getAll() {
+    return repository;
+  }
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  }
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
-
 })();
 
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
+console.log(pokemonRepository.getAll());
 
-function myLoopFunction(pokemon) {
-    console.log(pokemon.name + " is " + pokemon.height + " meters tall and " + pokemon.type);
-    }
-    pokemonRepository.getAll().forEach(myLoopFunction);
-
-
-    
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
