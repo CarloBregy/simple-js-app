@@ -12,7 +12,7 @@ let pokemonRepository = (function () {
       console.log("pokemon is not correct");
     }
   }
-  
+
   function getAll() {
     return pokemonList;
   }
