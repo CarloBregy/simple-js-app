@@ -1,3 +1,4 @@
+
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
@@ -140,6 +141,11 @@ modalContainer.addEventListener('click', (e) => {
   if (target === modalContainer) {
     hideModal();
   }
+});
+
+$('[data-toggle="modal"]').on('click', function(){
+  let targetSelector = $(this).attr('data-target');
+  $(targetSelector).modal('show'); // Bootstrap’s own function to make the modal appear
 });
 
 
